@@ -52,6 +52,7 @@ let songName;
 let status;
 let timeStamp;
 let time;
+let songAuthor
 async function setActivity(){
     if(!rpc|!win){
         return;
@@ -60,10 +61,11 @@ async function setActivity(){
          time = await win.webContents.executeJavaScript('document.querySelector(".web-chrome-playback-lcd__time-end").textContent');
          timeStamp = getTimestamps(time)
          songName = await win.webContents.executeJavaScript("document.querySelector('#playback-name > div > div > span:nth-child(1) > span').textContent.trim()")
-         status = "Listening to"
+         songAuthor = await win.webContents.executeJavaScript("(document.querySelector('.web-chrome-playback-lcd__sub-copy-scroll-inner-text-wrapper').textContent.replace(/\s(?=\s)/g,'')).trim()");
+         status = songName
          rpc.setActivity({
             details: status,
-            state:songName,
+            state:songAuthor,
             startTimestamp:timeStamp[0],
             endTimestamp:timeStamp[1],
             largeImageKey:"logomain"
