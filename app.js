@@ -65,7 +65,7 @@ async function setActivity(){
          status = songName
          rpc.setActivity({
             details: status,
-            state:songAuthor,
+            state:songAuthor ? songAuthor:"Unknown",
             startTimestamp:timeStamp[0],
             endTimestamp:timeStamp[1],
             largeImageKey:"logomain"
