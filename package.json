@@ -1,0 +1,17 @@
+{
+  "name": "apple_music",
+  "version": "1.0.0",
+  "description": "An electron app for apple music.",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "kazuma",
+  "license": "ISC",
+  "dependencies": {
+    "discord-rpc": "^3.2.0"
+  },
+  "devDependencies": {
+    "electron": "github:castlabs/electron-releases#v12.0.2-wvvmp"
+  }
+}

@@ -1,0 +1,5 @@
+node_modules/*
+build/*
+apple_music-linux-x64/*
+electron-pac/*
+package-lock.json
